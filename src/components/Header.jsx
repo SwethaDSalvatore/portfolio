@@ -1,6 +1,14 @@
 import React from "react";
 import SwethaPic from "../assets/swetha-pic.jpg";
+import ResumeDwn from "../assets/swetharamesh-resume-24.png";
 const Header = () => {
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = ResumeDwn;
+    link.download = "SwethaResume.png";
+    link.click();
+  };
+
   return (
     <div>
       <div className=" pt-10 pb-10  md:h-screen flex items-center">
@@ -108,14 +116,11 @@ const Header = () => {
                     Hire me
                   </a>
                 </button>
-                <button className="px-4 py-2 bg-rose-400 hover:bg-rose-500 rounded-lg">
-                  <a
-                    href="./assets/img/Swetha R_Resume_2023.pdf"
-                    target="_blank"
-                    className="font-semibold"
-                  >
-                    Download CV
-                  </a>
+                <button
+                  className="px-4 py-2 bg-rose-400 hover:bg-rose-500 rounded-lg"
+                  onClick={handleDownloadResume}
+                >
+                  Download CV
                 </button>
               </div>
             </div>
